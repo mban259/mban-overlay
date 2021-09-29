@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+    <repo quality="experimental" status="unofficial">
+        <name><![CDATA[mban-overlay]]></name>
+        <description lang="en"><![CDATA[An overlay by mban]]></description>
+        <homepage>https://github.com/mban259/mban-overlay</homepage>
+        <owner type="person">
+            <email>mban259@users.noreply.github.com</email>
+            <name><![CDATA[mban]]></name>
+        </owner>
+        <source type="git">https://github.com/mban259/mban-overlay.git</source>
+    </repo>
+</repositories>
