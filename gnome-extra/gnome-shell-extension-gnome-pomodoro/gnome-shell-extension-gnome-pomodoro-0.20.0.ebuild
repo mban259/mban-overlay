@@ -1,6 +1,6 @@
 EAPI=7
 
-inherit vala
+inherit vala meson
 
 DESCRIPTION="A time management utility for GNOME"
 
@@ -37,10 +37,13 @@ BDEPEND="
 
 S="${WORKDIR}/gnome-pomodoro-${PV}"
 
-src_prepare() {
+src_configure() {
 	vala_src_prepare
-	./autogen.sh --prefix=/usr --datadir=/usr/share
-	default
+	meson_src_configure
+}
+
+src_install() {
+	meson_src_install
 }
 
 pkg_postinst() {
