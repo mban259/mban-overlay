@@ -32,7 +32,3 @@ src_prepare() {
 	eautoreconf
     eapply_user
 }
-
-src_install() {
-	default
-}
