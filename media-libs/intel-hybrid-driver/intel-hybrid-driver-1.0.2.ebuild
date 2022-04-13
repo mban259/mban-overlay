@@ -18,7 +18,7 @@ IUSE=""
 
 RDEPEND="
     x11-libs/libva
-    x11-libs/libcmrt
+    media-libs/libcmrt
 "
 
 DEPEND="${RDEPEND}"
