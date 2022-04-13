@@ -1,5 +1,7 @@
 EAPI=7
 
+inherit eutils autotools
+
 DESCRIPTION="Intel C for Media RunTime GPU kernel manager"
 
 HOMEPAGE="https://01.org/linuxmedia/vaapi"
@@ -15,9 +17,22 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
-    x11-libs/libva
+    x11-libs/libdrm
 "
 
-DEPEND="${RDEPEND}"
+DEPEND="
+    ${RDEPEND}
+    x11-libs/libva
+    virtual/pkgconfig
+"
 
 S="${WORKDIR}/cmrt-${PV}"
+
+src_prepare() {
+	eautoreconf
+    eapply_user
+}
+
+src_install() {
+	default
+}
