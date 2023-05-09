@@ -25,7 +25,7 @@ RDEPEND="
 	dev-libs/dbus-glib
 	dev-libs/gom
 	app-eselect/eselect-gnome-shell-extensions
-	>=gnome-base/gnome-shell-43
+	>=gnome-base/gnome-shell-44
 "
 
 DEPEND="${RDEPEND}"
