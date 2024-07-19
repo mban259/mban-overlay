@@ -35,5 +35,14 @@ RDEPEND="
 	x11-libs/gtk+
 	sys-auth/polkit
 	dev-python/pygobject
-	net-libs/webkit-gtk
+ 	net-libs/webkit-gtk
 "
+
+BDEPEND="
+	dev-util/intltool
+	dev-python/python-distutils-extra
+"
+
+python_install() {
+	esetup.py install --prefix=/usr
+}
