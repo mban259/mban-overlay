@@ -43,6 +43,9 @@ BDEPEND="
 	dev-python/python-distutils-extra
 "
 
-python_install() {
-	esetup.py install --prefix=/usr
+src_install() {
+	cat >> install.cfg <<-EOF
+		[install]
+		prefix="${EPREFIX}/usr"
+	EOF
 }
