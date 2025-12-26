@@ -1,12 +1,12 @@
 EAPI=8
 
-inherit vala
+inherit vala meson xdg-utils
 
 DESCRIPTION="A time management utility for GNOME"
 
 HOMEPAGE="https://gnomepomodoro.org/"
 
-# https://github.com/gnome-pomodoro/gnome-pomodoro/archive/refs/tags/0.28.1.tar.gz
+# https://github.com/gnome-pomodoro/gnome-pomodoro/archive/refs/tags/0.23.1.tar.gz
 SRC_URI="https://github.com/gnome-pomodoro/gnome-pomodoro/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3"
 
@@ -24,7 +24,7 @@ RDEPEND="
 	dev-libs/dbus-glib
 	dev-libs/gom
 	app-eselect/eselect-gnome-shell-extensions
-	>=gnome-base/gnome-shell-40
+	>=gnome-base/gnome-shell-44
 "
 
 DEPEND="${RDEPEND}"
@@ -36,10 +36,17 @@ BDEPEND="
 
 S="${WORKDIR}/gnome-pomodoro-${PV}"
 
-src_prepare() {
+src_configure() {
 	vala_src_prepare
-	./autogen.sh --prefix=/usr --datadir=/usr/share
-	default
+	meson_src_configure
+}
+
+src_install() {
+	meson_src_install
+}
+
+src_test() {
+	meson test -C "${BUILD_DIR}"
 }
 
 pkg_postinst() {
