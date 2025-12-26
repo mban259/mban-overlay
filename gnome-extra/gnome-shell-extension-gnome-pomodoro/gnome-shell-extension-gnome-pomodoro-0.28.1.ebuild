@@ -1,4 +1,4 @@
-EAPI=8
+EAPI=7
 
 inherit vala meson xdg-utils
 
@@ -24,14 +24,16 @@ RDEPEND="
 	dev-libs/dbus-glib
 	dev-libs/gom
 	app-eselect/eselect-gnome-shell-extensions
-	>=gnome-base/gnome-shell-44
+	>=gnome-base/gnome-shell-48
+	dev-libs/libpeas:0
 "
 
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND} "
 
 BDEPEND="
 	$(vala_depend)
 	dev-util/intltool
+
 "
 
 S="${WORKDIR}/gnome-pomodoro-${PV}"
