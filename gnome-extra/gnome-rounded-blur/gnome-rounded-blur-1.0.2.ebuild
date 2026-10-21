@@ -16,16 +16,15 @@ KEYWORDS="~amd64"
 
 DEPEND="
     dev-libs/glib
-    dev-libs/graphene
-    gnome-base/mutter
+    media-libs/graphene
+    x11-wm/mutter
 "
 RDEPEND="
     ${DEPEND}
 "
 BDEPEND="
-    dev-build/meson
     dev-build/ninja
-    dev-util/gobject-introspection
+    dev-libs/gobject-introspection
 "
 
 S="${WORKDIR}/${PN}-${PV}"
